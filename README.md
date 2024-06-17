@@ -1,5 +1,8 @@
 # Babylon.js Third Person Example
 
+### demo
+https://zutto-oreno-turn.com/babylonjs-thirdperson-example/index.html
+
 ### setup
 
 ```
