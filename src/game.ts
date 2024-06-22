@@ -59,7 +59,7 @@ export class Game {
     });
   }
 
-  async BuildScene(): Promise<void> {
+  BuildScene(): void {
     // camera
     this.camera = new BABYLON.TargetCamera('camera', new BABYLON.Vector3(0, this.cameraHeight, -this.cameraRadius));
     this.camera.setTarget(new BABYLON.Vector3(0, this.cameraTargetHeight, 0));
@@ -359,7 +359,7 @@ export class Game {
   UpdateCamera(): void {
     const newCamera = new BABYLON.Vector3(0, 0, this.cameraRadius);
     const newCameraQuaternion = BABYLON.Quaternion.FromEulerAngles(this.cameraBeta, this.cameraAlpha, 0);
-    const newCameraPosition = newCamera.applyRotationQuaternionInPlace(newCameraQuaternion);
+    const newCameraPosition = newCamera.applyRotationQuaternion(newCameraQuaternion);
 
     this.camera.position.x = this.player.position.x + newCameraPosition.x;
     this.camera.position.y = this.player.position.y + newCameraPosition.y + this.cameraHeight;
